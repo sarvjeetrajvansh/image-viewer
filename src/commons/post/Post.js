@@ -14,17 +14,13 @@ import {
 import React, { Component } from "react";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { red } from "@material-ui/core/colors";
-import { BlockRounded, BorderLeft } from "@material-ui/icons";
 
 const styles = (theme) => ({
   root: {
-    margin: "20px 80px",
+    margin: "20px",
     width: "500px",
     height: "auto",
     padding: "0 75px 0 15px",
-  },
-  title: {
-    fontWeight: "bold",
   },
   media: {
     height: 0,
@@ -48,7 +44,7 @@ const styles = (theme) => ({
     color: "#00376b",
   },
   textFieldWidth: {
-    margin: "0 0 0 -7px",
+    margin: "0 0 0 2px",
     width: "86%",
   },
   likeStyle: {
@@ -181,7 +177,7 @@ class Post extends Component {
               avatar={
                 <Avatar src={postDetails.profilePic} alt="Profile picture" />
               }
-              title={postDetails.username}
+              title={<strong>{postDetails.username}</strong>}
               subheader={this.getPostDate(postDetails.timestamp)}
             />
             <CardMedia
@@ -191,7 +187,6 @@ class Post extends Component {
             <hr className={classes.horizontalLine} />
             <CardContent className={classes.content}>
               <Typography variant="body2" component="p">
-                {postDetails.caption}
                 <span className={classes.hashTags}>{postDetails.hashTags}</span>
               </Typography>
               <Typography

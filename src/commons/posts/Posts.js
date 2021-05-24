@@ -20,15 +20,7 @@ export default class Posts extends Component {
       <>
         <Grid container spacing={3}>
           {(this.props.totalPosts || []).map((post, index) => (
-            <Grid
-              item
-              xl={6}
-              lg={6}
-              md={6}
-              xs={6}
-              sm={12}
-              key={"post#" + index}
-            >
+            <Grid item xl={6} lg={6} md={6} xs={4} sm={3} key={"post#" + index}>
               <Post
                 post={post}
                 cb={this.props.cb}
